@@ -10,21 +10,21 @@
 
     <div v-if="weightStatus === 0 && startingWeightSet === true && lastWeight !== 0" class="mt-5">
       <p>You have lost </p>
-      <p id="weightStatus0">{{weightDifference}} kg</p>
+      <p id="weightStatus0">{{weightDifference.toFixed(2)}} kg</p>
       <iframe src="https://giphy.com/embed/d2Z9QYzA2aidiWn6" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/snl-thumbs-up-awesome-d2Z9QYzA2aidiWn6"></a></p>    </div>
 
   </div>
 
     <div v-if="weightStatus === 1" class="mt-5">
       <p>Weight has not changed and is still</p>
-      <p id="weightStatus1">{{weightDifference}} kg</p>
+      <p id="weightStatus1">{{weightDifference.toFixed(2)}} kg</p>
       <iframe src="https://giphy.com/embed/opzWPcGA4zRVQJxHzG" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/kimsconvenience-opzWPcGA4zRVQJxHzG"></a></p>
     </div>
 
 
     <div v-if="weightStatus === 2" class="mt-5">
       <p>You have gained</p>
-      <p id="weightStatus2">{{weightDifference}} kg</p>
+      <p id="weightStatus2">{{weightDifference.toFixed(2)}} kg</p>
       <iframe allow="fullscreen" frameBorder="0" height="480" src="https://giphy.com/embed/CvF6vRAf7QUgCvQ9KK/video"></iframe>
     </div>
 </div>
@@ -58,8 +58,6 @@ export default {
     }
   },
   methods: {
-    //TODO: compare localStorage weight to new inputted weight
-    //TODO: Show weight difference in fitting sentence
     //TODO: Optional (Give the option to display in kg or grams)
 
 
