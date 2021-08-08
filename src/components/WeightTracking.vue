@@ -12,21 +12,21 @@
 
     <div v-if="weightStatus === 0 && startingWeightSet === true && lastWeight !== 0" class="mt-5">
       <p>You have lost </p>
-      <p id="weightStatus0">{{weightDifference.toFixed(2)}} kg</p>
+      <p id="weightStatus0">{{weightDifferenceFixed}} kg</p>
       <iframe src="https://giphy.com/embed/d2Z9QYzA2aidiWn6" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/snl-thumbs-up-awesome-d2Z9QYzA2aidiWn6"></a></p>    </div>
 
   </div>
 
     <div v-if="weightStatus === 1" class="mt-5">
       <p>Weight has not changed and is still</p>
-      <p id="weightStatus1">{{weightDifference.toFixed(2)}} kg</p>
+      <p id="weightStatus1">{{weightDifferenceFixed}} kg</p>
       <iframe src="https://giphy.com/embed/opzWPcGA4zRVQJxHzG" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/kimsconvenience-opzWPcGA4zRVQJxHzG"></a></p>
     </div>
 
 
     <div v-if="weightStatus === 2" class="mt-5">
       <p>You have gained</p>
-      <p id="weightStatus2">{{weightDifference.toFixed(2)}} kg</p>
+      <p id="weightStatus2">{{weightDifferenceFixed}} kg</p>
       <iframe allow="fullscreen" frameBorder="0" height="480" src="https://giphy.com/embed/CvF6vRAf7QUgCvQ9KK/video"></iframe>
     </div>
 </div>
@@ -48,6 +48,9 @@ export default {
   computed : {
     retrieveLstWeight(){
       return localStorage.getItem('lastWeight');
+    },
+    weightDifferenceFixed(){
+      return this.weightDifference.toFixed(2);
     }
   },
   mounted(){
