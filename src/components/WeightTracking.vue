@@ -37,7 +37,7 @@ export default {
   name: "WeightTracking",
   data(){
     return {
-      weightInput : null,
+      weightInput : 0,
       currentWeight : 0,
       weightDifference : 0,
       startingWeightSet : false,
