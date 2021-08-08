@@ -1,8 +1,10 @@
 <template>
 <div class="mt-5">
-  <input type="number" placeholder="weight" class="text-align-center" v-model="weightInput">
-  <input v-if="startingWeightSet === true" type="button" @click="weightCalculation" value="Calculate">
-  <input v-if="startingWeightSet === false" type="button" @click="setWeight" value="Set">
+  <input placeholder="weight" class="text-align-center" v-model="weightInput">
+  <input class="form-control" v-if="startingWeightSet === true" type="button" @click="weightCalculation" value="Calculate weight difference">
+  <input class="form-control" v-if="startingWeightSet === false" type="button" @click="setWeight" value="Set the first weight">
+
+
 
   <div class="mt-5">
     <h1 v-if="lastWeight">Last weight {{lastWeight}}</h1>
@@ -35,7 +37,7 @@ export default {
   name: "WeightTracking",
   data(){
     return {
-      weightInput : 0,
+      weightInput : null,
       currentWeight : 0,
       weightDifference : 0,
       startingWeightSet : false,
@@ -118,6 +120,11 @@ export default {
 
 .mt-5 {
   font-size: 20px;
+}
+
+.form-control {
+  margin: auto !important;
+  width: 68% !important;
 }
 </style>
 <style>
